@@ -1,6 +1,6 @@
 import unittest
 import datetime
-from newscover.newscover import fetch_latest_news
+from scripts.newscover.newsapi import fetch_latest_news
 
 class TestNewsAPI(unittest.TestCase):
     def news_keyword_Is_None():
