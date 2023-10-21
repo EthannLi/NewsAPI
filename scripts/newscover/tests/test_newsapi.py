@@ -30,8 +30,8 @@ class TestLookBack(unittest.TestCase):
     def lookback_without_days(self):
         api_key="e7d7f14874b942fb9c02515cfe192063"
         news_keywords= "tesla"
-        oldest_allowed_date = datetime.datetime.now() - datetime.timedelta(days=int(lookback_days))
-        news = fetch_latest_news(api_key, news_keywords, lookback_days)
+        oldest_allowed_date = datetime.datetime.now() - datetime.timedelta(10)
+        news = fetch_latest_news(api_key, news_keywords)
         for article in news:
             article_date = datetime.strptime(article['publishedAt'], '%Y-%m-%dT%H:%M:%SZ')
             self.assertGreaterEqual(article_date, oldest_allowed_date)
