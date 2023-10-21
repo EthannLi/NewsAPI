@@ -36,7 +36,7 @@ def main():
     # { “trump_fiasco”: [“trump”, “trial”], “swift”: [“taylor”, “swift”, “movie”] ]
 
     # read the json file
-    fpath = getPath("test.json")
+    fpath = getPath(args.input)
     print(fpath)
     with open(fpath) as f:
         data = json.load(f)
