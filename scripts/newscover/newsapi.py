@@ -9,6 +9,9 @@ def fetch_latest_news(api_key,news_keywords,lookback_days=10):
         sys.error("news_keywords is empty")
         return None
 
+    if lookback_days is None:
+        lookback_days = 10
+
     dates = datetime.datetime.now() - datetime.timedelta(days=int(lookback_days))
     # Just want the date part
     dates = str(dates).split(" ")[0]

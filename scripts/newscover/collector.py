@@ -2,7 +2,7 @@ from pathlib import Path
 import json
 import argparse
 import os
-from newsapi import fetch_latest_news
+from newscover.newsapi import fetch_latest_news
 
 def getPath(file):
     path = Path(__file__).parent / file
@@ -24,7 +24,7 @@ def dump_json(output_dir,key,value):
     fname = os.path.join(output_dir, key+".json")
 
     news = fetch_latest_news(args.api_key,value,args.days)
-    
+
     with open(fname, "w") as file:
         json.dump(news, file, indent=4)
 
@@ -45,10 +45,6 @@ def main():
     for key,values in data.items():
         for value in values :
             dump_json(args.output,key,value)
-
-
-
-
 
 if __name__ == "__main__":
     main()
