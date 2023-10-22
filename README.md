@@ -4,6 +4,7 @@ This is a project served to learn about API and the use case for them. In this p
 
 To run the scrip collector:
 python -m newscover.collector -k <api_key> [-b <# days to lookback>] -i <input_file> -o <output_dir>
+
 the input file has to look like this : 
 { 
   “trump_fiasco”: [“trump”, “trial”],
